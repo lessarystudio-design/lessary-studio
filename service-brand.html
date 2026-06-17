@@ -24,7 +24,7 @@
   <meta property="og:url" content="https://lessarystudio.com/">
   <meta property="og:title" content="簡實制所 Lessary Studio｜品牌設計 · 品牌官網設計 · LINE 經營">
   <meta property="og:description" content="專為個人品牌與小型工作室設計。從 Logo、品牌官網設計到 品牌 LINE 建置，整合品牌基礎，陪你長期經營。">
-  <meta property="og:image" content="[https://lessarystudio.com/img/og_lessary.jpg](https://lessarystudio.com/img/og_lessary)">
+ <meta property="og:image" content="https://lessarystudio.com/img/og_lessary.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="zh_TW">
@@ -474,17 +474,36 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/shared.js"></script>
    <!-- FAQ -->
-  <script>
-  document.querySelectorAll('.faq-q').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.closest('.faq-item');
-      var isOpen = item.classList.contains('is-open');
-      document.querySelectorAll('.faq-item.is-open').forEach(function(el){ el.classList.remove('is-open'); });
-      if(!isOpen) item.classList.add('is-open');
+<script>
+document.querySelectorAll('.faq-q').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('is-open');
+
+    // 收合目前所有展開的項目
+    document.querySelectorAll('.faq-item.is-open').forEach(function (el) {
+      el.classList.remove('is-open');
+    });
+
+    if (!isOpen) {
+      item.classList.add('is-open');
+    }
+
+    // 等版面重新排列（收合動畫/高度變化）後，
+    // 將被點擊的按鈕滾動到固定視窗位置，避免畫面跳動讓使用者迷失位置
+    requestAnimationFrame(function () {
+      var headerOffset = 90; // 視站上固定 header 高度調整，若無固定 header 可設為 0
+      var rect = btn.getBoundingClientRect();
+      var targetY = window.scrollY + rect.top - headerOffset;
+
+      window.scrollTo({
+        top: targetY,
+        behavior: 'smooth'
+      });
     });
   });
-  </script>
-
+});
+</script>
 
 
 </body>
