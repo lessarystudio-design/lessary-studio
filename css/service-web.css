@@ -75,6 +75,14 @@
   .plan-card-a .plan-fit p{color:rgba(255,255,255,0.55);}
   .plan-card-b .plan-fit p{color:var(--text-muted);}
 
+.web-cta {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 28px;
+  font-size: 14px; font-weight: 700; color: var(--accent);
+  text-decoration: none; letter-spacing: .04em;
+  border-bottom: 1.5px solid var(--accent); padding-bottom: 2px ; width: 40%;
+  transition: gap .2s, color .2s, border-color .2s;
+}
+.web-cta:hover { gap: 10px; color: var(--white); border-color: var(--white); }
 
 
   /* FAQ */
