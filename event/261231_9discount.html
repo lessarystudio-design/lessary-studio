@@ -9,6 +9,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="../img/ico_lessary_logo.ico">
+<!-- SEO -->
+<meta name=”robots” content=”noindex , nofollow“> <!--讓爬蟲先不搜尋到-->
+<meta name="description" content="簡實制所 Lessary Studio，專為個人品牌與小型工作室提供品牌 Logo 設計、品牌官網設計建置、品牌 LINE 建置視覺建立，讓設計回到對人有用。">
+<meta name="keywords" content="品牌設計,Logo設計,品牌官網設計,LINE官方帳號,個人品牌,小型工作室,簡實制所,Lessary Studio">
+<meta name="author" content="簡實制所 Lessary Studio">
+<link rel="canonical" href="https://lessarystudio.com/">
+
+<!-- Open Graph（Facebook / LINE 縮圖預覽） -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lessarystudio.com/">
+<meta property="og:title" content="簡實制所 Lessary Studio｜品牌設計 · 品牌官網設計 · LINE 經營">
+<meta property="og:description" content="專為個人品牌與小型工作室設計。從 Logo、品牌官網設計到 品牌 LINE 建置，整合品牌基礎，陪你長期經營。">
+<meta property="og:image" content="https://lessarystudio.com/img/og_lessary.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="簡實制所 Lessary Studio">
+  
+
 <style>
 /* ============ RESET & BASE ============ */
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -248,7 +267,7 @@ button{font-family:inherit;border:none;background:none;cursor:pointer;}
 
 @media(max-width:980px){
   .hero-inner{grid-template-columns:1fr;}
-  .hero-visual{height:420px;order:-1;margin-bottom:8px;}
+  .hero-visual{height:420px;order:-1;margin-bottom:8px; z-index: 3;}
   .hero-copy .hero-sub{max-width:100%;}
 }
 @media(max-width:480px){
