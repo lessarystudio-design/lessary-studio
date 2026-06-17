@@ -86,14 +86,21 @@
   .faq-q-text{font-size:15px;font-weight:700;color:var(--primary);line-height:1.5;}
   .faq-icon{width:28px;height:28px;border-radius:50%;background:rgba(6,199,85,0.1);color:var(--line-green);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s,transform .3s;}
   .faq-item.is-open .faq-icon{background:var(--line-green);color:var(--white);transform:rotate(45deg);}
-  .faq-a{display:none;background:var(--white) ; padding:0 28px 22px;font-size:14px;color:var(--text-muted);line-height:1.9;}
-  .faq-a p+p{margin-top:10px;}
-  .faq-item.is-open .faq-a{display:block;}
+ .faq-a{display:none;background:var(--white);padding:0 28px 22px;font-size:14px;color:var(--text-muted);line-height:1.9;}
+.faq-a p+p{margin-top:10px;}
+.faq-item.is-open .faq-a{display:block;}
 
-  /*qa-table */
+/* qa-table wrapper：負責處理橫向滾動 */
+.qa-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* iOS 滑動更順 */
+  margin: 0 -28px; /* 可選：讓滾動區域貼齊 faq-a 的左右邊界，視覺上更舒服 */
+  padding: 0 28px;
+}
 
 .qa-table {
   width: 100%;
+  min-width: 480px; /* 關鍵：避免表格被硬擠縮，超過時才會出現滾動 */
   border-collapse: collapse;
 }
 
@@ -101,6 +108,7 @@
 .qa-table td {
   border: 1px solid rgba(42, 50, 75, 0.15);
   padding: 8px;
+  white-space: nowrap; /* 避免文字被擠到斷行變形，配合橫向滾動使用 */
 }
 
 .qa-table th {
@@ -111,6 +119,7 @@
 .qa-table tbody tr:nth-child(even) {
   background: #F7F8FA;
 }
+
 
   /* FEATURES STRIP */
   .features-strip{background:var(--bg);padding:80px;}

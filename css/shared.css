@@ -146,6 +146,8 @@ body {
   .sub-toggle .toggle-arrow { display: inline-block; transition: transform .3s; }
   .nav-links li.has-sub.is-open .toggle-arrow { transform: rotate(180deg); }
 
+
+
   /* nav-sub 垂直展開 */
   .nav-sub {
     display: none; list-style: none; padding: 0;
@@ -183,13 +185,14 @@ body {
   .nav-links li.has-sub > a {
     display: inline-flex; align-items: center; gap: 4px;
   }
-  .desktop-arrow {
-    font-size: 24px; opacity: .5; display: inline-block;
+.desktop-arrow {
+    font-size: 20px; opacity: .5; display: inline-block;
     transition: transform .25s;
   }
   .nav-links li.has-sub:hover > a .desktop-arrow,
   .nav-links li.has-sub.is-open > a .desktop-arrow {
     transform: rotate(180deg);
+    margin-top: 10px;
   }
 
   /* 橋接層：防止滑鼠移到選單時選單消失 */
