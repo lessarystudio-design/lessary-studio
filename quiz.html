@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>簡實制所｜服務需求測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/quiz.css">
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <img src="img/img_lessary_logo.svg" alt="簡實制所">
+      </div>
+      <span class="logo-text">簡實制所 Lessary Studio </span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於我</a></li>
+      <li class="has-sub">
+        <a href="services.html">服務內容 <span class="desktop-arrow">▾</span></a>
+        <button class="sub-toggle" aria-label="展開服務子選單">
+          <span class="toggle-arrow">▾</span>
+        </button>
+        <ul class="nav-sub">
+          <li><a href="service-brand.html">品牌起步</a></li>
+          <li><a href="service-web.html">品牌官網設計</a></li>
+          <li><a href="service-line.html">品牌 LINE 建置</a></li>
+          <!-- <li><a href="service-ongoing.html">品牌持續經營</a></li> -->
+        </ul>
+      </li>
+       <li><a  href="https://line.me/R/ti/p/@025sjouz" target="_blank"  class="nav-cta">立即詢問</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="stage">
+  <div class="topbar">
+    <div class="brand">服務需求測驗</div>
+    <button class="restart-link" onclick="restart()" id="restartBtn" style="display:none;">↺ 重新測試</button>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="card-wrap" id="cardWrap"></div>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <p class="logo">✦ 簡實制所 Lessary Studio</p>
+    <p>為人而簡，因實而久。<br>協助個人品牌與小型工作室，<br>建立清晰可用的數位體驗。</p>
+  </div>
+  <div class="footer-col">
+    <h4>Pages</h4>
+    <a href="index.html">首頁</a>
+    <a href="about.html">關於我</a>
+    <a href="services.html">服務內容</a>
+  </div>
+   <div class="footer-col">
+    <h4>Services</h4>
+    <a href="service-brand.html">品牌起步</a>
+    <a href="service-web.html">品牌官網設計</a>
+    <a href="service-line.html">LINE OA</a>
+    <!-- <a href="service-ongoing.html">品牌持續經營</a> -->
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 簡實制所 Lessary Studio — Designed by Laya</p>
+</div>
+
+<script src="./js/quiz.js"></script>
+</body>
+</html>

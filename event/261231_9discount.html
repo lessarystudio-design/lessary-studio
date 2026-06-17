@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品案例募集計畫｜全服務 9 折優惠 - 簡實制所 Lessary Studio</title>
+<meta name="description" content="簡實制所限時推出合作案例募集計畫，完成專案後提供真實評語，即可享有品牌設計、官網建置、LINE 官方帳號全服務 9 折優惠。名額有限。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/ico_lessary_logo.ico">
+<style>
+/* ============ RESET & BASE ============ */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --primary: #2A324B;
+  --primary-deep: #1C2138;
+  --accent: #89DE7C;
+  --accent-deep: #5FC450;
+  --bg: #F3F3F3;
+  --white: #FFFFFF;
+  --sun: #FFD874;
+  --text-soft: #6B7280;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --font-display: 'Noto Sans TC', sans-serif;
+  --font-num: 'Manrope', sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family: var(--font-display);
+  background: var(--bg);
+  color: var(--primary);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;border:none;background:none;cursor:pointer;}
+.container{max-width:1180px;margin:0 auto;padding:0 24px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:0.85rem;font-weight:700;letter-spacing:0.06em;
+  color:var(--accent-deep);
+  background:rgba(137,222,124,0.15);
+  padding:6px 16px;border-radius:99px;
+  margin-bottom:18px;
+}
+.section-title{
+  font-size:clamp(1.7rem,3.2vw,2.5rem);
+  font-weight:900;
+  line-height:1.4;
+  letter-spacing:-0.01em;
+}
+.section-title .hl{color:var(--accent-deep);position:relative;}
+.section-pad{padding:96px 0;}
+@media(max-width:768px){.section-pad{padding:64px 0;}}
+:focus-visible{outline:3px solid var(--accent-deep);outline-offset:3px;border-radius:4px;}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  background:rgba(243,243,243,0.85);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(42,50,75,0.08);
+  transition:background .3s ease;
+}
+.nav-inner{
+  max-width:1180px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.logo-mark{width:34px;height:34px;flex-shrink:0;}
+.logo-mark img{width:100%;height:100%;}
+.logo-text{font-weight:700;font-size:1rem;color:var(--primary);white-space:nowrap;}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;width:32px;height:32px;
+  align-items:center;justify-content:center;z-index:1100;
+}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--primary);border-radius:2px;transition:.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-links{display:flex;align-items:center;gap:8px;}
+.nav-links > li{position:relative;}
+.nav-links > li > a{
+  display:block;padding:10px 16px;font-weight:500;font-size:0.95rem;
+  color:var(--primary);border-radius:99px;transition:.25s;
+}
+.nav-links > li > a:hover, .nav-links > li > a.active{background:rgba(42,50,75,0.08);}
+.nav-cta{
+  background:var(--accent) !important;color:var(--primary-deep) !important;
+  font-weight:700 !important;padding:10px 22px !important;
+  box-shadow:0 4px 14px rgba(137,222,124,0.45);
+}
+.nav-cta:hover{background:var(--accent-deep) !important;}
+.has-sub{display:flex;align-items:center;}
+.sub-toggle{display:none;padding:8px;}
+.desktop-arrow{font-size:1em;}
+.nav-sub{
+  position:absolute;top:100%;left:0;min-width:180px;
+  background:var(--white);border-radius:14px;
+  box-shadow:0 12px 32px rgba(42,50,75,0.18);
+  padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:.25s;
+}
+.has-sub:hover .nav-sub{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-sub li a{display:block;padding:10px 14px;border-radius:8px;font-size:0.9rem;color:var(--primary);}
+.nav-sub li a:hover{background:var(--bg);color:var(--accent-deep);}
+
+@media(max-width:900px){
+  .hamburger{display:flex;}
+  .nav-links{
+    position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+    background:var(--white);flex-direction:column;align-items:stretch;
+    padding:90px 24px 24px;gap:4px;
+    transform:translateX(100%);transition:transform .35s ease;
+    box-shadow:-8px 0 40px rgba(0,0,0,0.12);
+    overflow-y:auto;
+  }
+  .nav-links.open{transform:translateX(0);}
+  .nav-links > li > a{padding:14px 16px;font-size:1.05rem;}
+  .has-sub{flex-direction:column;align-items:stretch;}
+  .sub-toggle{
+    display:flex;position:absolute;right:0;top:0;height:100%;width:50px;
+    align-items:center;justify-content:center;
+  }
+  .toggle-arrow{transition:.25s;color:var(--primary);}
+  .has-sub.open .toggle-arrow{transform:rotate(180deg);}
+  .nav-sub{
+    position:static;opacity:1;visibility:visible;transform:none;
+    box-shadow:none;background:var(--bg);
+    max-height:0;overflow:hidden;padding:0 8px;transition:.3s;
+  }
+  .has-sub.open .nav-sub{max-height:300px;padding:8px;margin-top:2px;}
+  .nav-cta{margin-top:12px;text-align:center;}
+  .desktop-arrow{display:none;}
+}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  padding:150px 0 100px;
+  background:var(--bg);
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-120px;right:-120px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(137,222,124,0.28),transparent 70%);
+  z-index:0;
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center;
+  position:relative;z-index:1;
+}
+.hero-copy .eyebrow{background:rgba(42,50,75,0.08);color:var(--primary);}
+.hero-copy .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-deep);display:inline-block;animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero-title{
+  font-size:clamp(2rem,4.4vw,3.1rem);
+  font-weight:900;line-height:1.36;letter-spacing:-0.01em;
+  margin-bottom:20px;
+}
+.hero-title .badge90{
+  display:inline-block;position:relative;
+  color:var(--primary-deep);
+  padding:0 6px;
+}
+.hero-title .badge90::after{
+  content:'';position:absolute;left:-2px;right:-2px;bottom:6px;height:0.42em;
+  background:var(--accent);z-index:-1;border-radius:4px;
+  transform:rotate(-1deg);
+}
+.hero-sub{font-size:1.05rem;color:var(--text-soft);max-width:480px;margin-bottom:14px;}
+.hero-note{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;font-size:0.95rem;color:#B8860B;
+  background:rgba(255,216,116,0.35);
+  padding:9px 18px;border-radius:99px;margin-bottom:32px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px 30px;border-radius:99px;font-weight:700;font-size:1rem;
+  transition:.25s;white-space:nowrap;
+}
+.btn-primary{
+  background:var(--accent);color:var(--primary-deep);
+  box-shadow:0 10px 28px rgba(137,222,124,0.5);
+}
+.btn-primary:hover{background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 14px 32px rgba(137,222,124,0.6);}
+.btn-outline{
+  background:transparent;color:var(--primary);
+  border:2px solid rgba(42,50,75,0.25);
+}
+.btn-outline:hover{border-color:var(--primary);background:rgba(42,50,75,0.05);}
+
+/* Hero visual */
+.hero-visual{position:relative;height:480px;display:flex;align-items:center;justify-content:center;}
+.float-el{position:absolute;animation:floaty 4.5s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-14px) rotate(2deg);}}
+.phone-mock{
+  position:relative;width:230px;height:460px;
+  background:var(--primary-deep);border-radius:40px;
+  padding:14px;box-shadow:0 30px 60px rgba(42,50,75,0.35);
+  z-index:3;
+}
+.phone-screen{
+  width:100%;height:100%;background:var(--white);border-radius:28px;
+  overflow:hidden;display:flex;flex-direction:column;
+}
+.phone-bar{
+  background:var(--accent);padding:14px 16px;display:flex;align-items:center;gap:8px;
+}
+.phone-bar .dotrow{display:flex;gap:4px;}
+.phone-bar .dotrow span{width:6px;height:6px;border-radius:50%;background:rgba(28,33,56,0.4);}
+.phone-bar .lbl{font-size:0.7rem;font-weight:700;color:var(--primary-deep);margin-left:6px;}
+.phone-body{flex:1;background:#EFF3EE;padding:14px 12px;display:flex;flex-direction:column;gap:10px;}
+.chat-bubble{
+  max-width:80%;padding:9px 13px;border-radius:14px;font-size:0.72rem;line-height:1.5;
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+}
+.chat-bubble.them{background:var(--white);align-self:flex-start;border-bottom-left-radius:4px;}
+.chat-bubble.me{background:var(--accent);color:var(--primary-deep);align-self:flex-end;border-bottom-right-radius:4px;font-weight:600;}
+.chat-bubble.them2{background:var(--white);align-self:flex-start;border-bottom-left-radius:4px;}
+
+.deco-card{
+  position:absolute;background:var(--white);border-radius:18px;
+  box-shadow:0 16px 36px rgba(42,50,75,0.16);padding:12px 16px;
+  display:flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:700;
+}
+.deco-1{top:6%;left:-4%;animation-delay:.2s;}
+.deco-2{bottom:10%;left:-8%;animation-delay:1s;}
+.deco-3{top:42%;right:-10%;animation-delay:1.8s;}
+.star-deco{position:absolute;color:var(--sun);animation:spin 6s linear infinite;}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.star-1{top:2%;right:18%;font-size:1.6rem;}
+.star-2{bottom:6%;right:4%;font-size:1.1rem;animation-duration:5s;}
+.star-3{top:30%;left:2%;font-size:1rem;animation-duration:7s;}
+
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-visual{height:420px;order:-1;margin-bottom:8px;}
+  .hero-copy .hero-sub{max-width:100%;}
+}
+@media(max-width:480px){
+  .hero{padding:130px 0 70px;}
+  .deco-1{left:-2%;}
+  .deco-2{left:-2%;}
+  .deco-3{right:-2%;}
+}
+
+/* ============ ABOUT (活動說明) ============ */
+.about{background:var(--white);position:relative;}
+.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center;}
+.about-visual{position:relative;display:flex;justify-content:center;}
+.about-card-main{
+  background:var(--primary);border-radius:var(--radius-lg);padding:40px 32px;
+  color:var(--white);max-width:380px;position:relative;z-index:2;
+  box-shadow:0 24px 50px rgba(42,50,75,0.25);
+}
+.about-card-main .num90{font-family:var(--font-num);font-size:4.2rem;font-weight:800;color:var(--accent);line-height:1;}
+.about-card-main p{color:rgba(255,255,255,0.78);margin-top:10px;font-size:0.92rem;}
+.about-deco-shape{
+  position:absolute;border-radius:50%;z-index:1;
+}
+.about-shape-1{width:160px;height:160px;background:rgba(137,222,124,0.35);top:-30px;right:-20px;}
+.about-shape-2{width:90px;height:90px;border:3px solid var(--accent);top:60%;left:-40px;}
+.about-copy .section-title{margin-bottom:20px;}
+.about-copy p{color:var(--text-soft);font-size:1.02rem;margin-bottom:14px;max-width:520px;}
+.about-copy p strong{color:var(--primary);font-weight:700;}
+
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;}
+  .about-visual{order:-1;margin-bottom:8px;}
+}
+
+/* ============ FIT (適合對象) ============ */
+.fit{background:var(--bg);}
+.fit-head{text-align:center;max-width:600px;margin:0 auto 48px;}
+.fit-head .section-title{margin-bottom:10px;}
+.fit-head p{color:var(--text-soft);}
+.fit-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.fit-card{
+  background:var(--white);border-radius:var(--radius-md);padding:26px 18px;
+  text-align:center;box-shadow:0 6px 18px rgba(42,50,75,0.06);
+  transition:.3s;border:1px solid transparent;
+}
+.fit-card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(42,50,75,0.12);border-color:rgba(137,222,124,0.4);}
+.fit-icon{
+  width:52px;height:52px;border-radius:16px;background:rgba(137,222,124,0.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  margin:0 auto 14px;
+}
+.fit-card p{font-size:0.88rem;font-weight:500;color:var(--primary);line-height:1.55;}
+
+@media(max-width:980px){.fit-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:600px){.fit-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============ SERVICES (優惠服務) ============ */
+.services{background:var(--white);position:relative;}
+.services-head{text-align:center;max-width:640px;margin:0 auto 52px;}
+.services-head .section-title{position:relative;display:inline-block;}
+.services-head .off-tag{
+  display:inline-flex;align-items:baseline;gap:6px;
+  background:var(--primary);color:var(--white);
+  padding:8px 22px;border-radius:99px;margin-top:14px;font-weight:700;
+}
+.services-head .off-tag .big{font-family:var(--font-num);font-size:1.8rem;color:var(--accent);font-weight:800;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.svc-card{
+  background:var(--bg);border-radius:var(--radius-lg);padding:34px 28px;
+  position:relative;overflow:hidden;transition:.35s;
+}
+.svc-card:hover{transform:translateY(-8px);box-shadow:0 22px 40px rgba(42,50,75,0.14);}
+.svc-card::after{
+  content:'';position:absolute;width:120px;height:120px;border-radius:50%;
+  background:rgba(137,222,124,0.18);top:-50px;right:-50px;
+}
+.svc-icon{
+  width:60px;height:60px;border-radius:18px;background:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;
+  margin-bottom:20px;position:relative;z-index:1;
+}
+.svc-card h3{font-size:1.18rem;font-weight:700;margin-bottom:10px;position:relative;z-index:1;}
+.svc-card p{font-size:0.9rem;color:var(--text-soft);position:relative;z-index:1;line-height:1.65;}
+.svc-card .svc-off{
+  position:absolute;top:24px;right:24px;background:var(--accent);
+  color:var(--primary-deep);font-weight:800;font-size:0.78rem;
+  padding:5px 12px;border-radius:99px;z-index:1;
+}
+
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr;}}
+
+/* ============ PROCESS (合作流程) ============ */
+.process{background:var(--primary);color:var(--white);position:relative;overflow:hidden;}
+.process::before{
+  content:'';position:absolute;bottom:-100px;left:-100px;width:300px;height:300px;
+  border-radius:50%;background:rgba(137,222,124,0.08);
+}
+.process-head{text-align:center;max-width:560px;margin:0 auto 56px;position:relative;z-index:1;}
+.process-head .eyebrow{background:rgba(137,222,124,0.18);color:var(--accent);}
+.process-head .section-title{color:var(--white);}
+.process-head p{color:rgba(255,255,255,0.65);margin-top:10px;}
+.process-track{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative;z-index:1;
+}
+.process-track::before{
+  content:'';position:absolute;top:26px;left:6%;right:6%;height:2px;
+  background:repeating-linear-gradient(to right,rgba(137,222,124,0.4) 0 8px,transparent 8px 16px);
+  z-index:0;
+}
+.proc-step{position:relative;z-index:1;text-align:center;}
+.proc-num{
+  width:54px;height:54px;border-radius:50%;background:var(--accent);color:var(--primary-deep);
+  font-family:var(--font-num);font-weight:800;font-size:1.25rem;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+  box-shadow:0 0 0 6px var(--primary);
+}
+.proc-step h3{font-size:1rem;font-weight:700;margin-bottom:8px;}
+.proc-step p{font-size:0.85rem;color:rgba(255,255,255,0.62);line-height:1.6;}
+
+@media(max-width:980px){
+  .process-track{grid-template-columns:1fr;gap:0;}
+  .process-track::before{display:none;}
+  .proc-step{
+    display:flex;align-items:flex-start;gap:18px;text-align:left;
+    padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .proc-step:last-child{border-bottom:none;}
+  .proc-num{margin:0;flex-shrink:0;}
+}
+
+/* ============ REVIEW USE (評語使用說明) ============ */
+.review-use{background:var(--bg);}
+.review-box{
+  max-width:780px;margin:0 auto;background:var(--white);border-radius:var(--radius-lg);
+  padding:48px 44px;text-align:center;box-shadow:0 10px 30px rgba(42,50,75,0.08);
+  position:relative;
+}
+.review-box .quote-mark{
+  font-family:var(--font-num);font-size:3.4rem;color:var(--accent);line-height:1;
+  font-weight:800;margin-bottom:6px;
+}
+.review-box h2{margin-bottom:18px;}
+.review-box p{color:var(--text-soft);max-width:560px;margin:0 auto 8px;font-size:0.98rem;}
+.review-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.review-tags span{
+  background:rgba(42,50,75,0.06);color:var(--primary);font-size:0.82rem;font-weight:600;
+  padding:7px 16px;border-radius:99px;
+}
+@media(max-width:600px){.review-box{padding:36px 24px;}}
+
+/* ============ NOTICE (注意事項) ============ */
+.notice{background:var(--white);}
+.notice-inner{max-width:760px;margin:0 auto;}
+.notice-inner .section-title{margin-bottom:28px;text-align:center;}
+.notice-list{
+  border-radius:var(--radius-md);background:var(--bg);padding:8px;
+}
+.notice-list li{
+  display:flex;gap:14px;padding:18px 20px;font-size:0.92rem;color:var(--primary);
+  border-bottom:1px solid rgba(42,50,75,0.08);
+}
+.notice-list li:last-child{border-bottom:none;}
+.notice-list li .mark{
+  flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--accent);
+  color:var(--primary-deep);font-size:0.72rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.notice-list li span.txt{color:var(--text-soft);line-height:1.65;}
+
+/* ============ CTA 結尾區 ============ */
+.cta-end{
+  background:linear-gradient(135deg,var(--primary) 0%,var(--primary-deep) 100%);
+  color:var(--white);text-align:center;position:relative;overflow:hidden;
+}
+.cta-end::before{
+  content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);
+  width:600px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(137,222,124,0.16),transparent 70%);
+}
+.cta-end-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.cta-end .section-title{color:var(--white);margin-bottom:18px;}
+.cta-end p{color:rgba(255,255,255,0.72);margin-bottom:8px;font-size:1rem;}
+.cta-steps{
+  display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  border-radius:99px;padding:10px 22px;margin:24px 0 32px;font-size:0.85rem;color:rgba(255,255,255,0.85);
+}
+.cta-steps b{color:var(--accent);}
+.cta-end .btn-primary{font-size:1.05rem;padding:18px 38px;}
+
+/* ============ FOOTER ============ */
+.site-footer{background:var(--primary-deep);color:rgba(255,255,255,0.55);padding:36px 0;text-align:center;font-size:0.85rem;}
+.site-footer a{color:rgba(255,255,255,0.8);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark">
+         <img src="../img/img_lessary_logo.svg" alt="簡實制所">
+      </div>
+      <span class="logo-text">簡實制所 Lessary Studio | 2026/12/31 前優惠方案 </span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" >首頁</a></li>
+      <li><a href="../about.html">關於我</a></li>
+      <li class="has-sub">
+        <a href="../services.html">服務內容 <span class="desktop-arrow">▾</span></a>
+        <button class="sub-toggle" aria-label="展開服務子選單">
+          <span class="toggle-arrow">▾</span>
+        </button>
+        <ul class="nav-sub">
+          <li><a href="../service-brand.html">品牌起步</a></li>
+          <li><a href="../service-web.html">品牌官網設計</a></li>
+          <li><a href="../service-line.html">品牌 LINE 建置</a></li>
+        </ul>
+      </li>
+     <li><a href="https://line.me/R/ti/p/@025sjouz" target="_blank"  class="nav-cta">立即詢問</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span> 限時合作案例募集計畫</span>
+      <h1 class="hero-title">作品案例募集計畫<br>活動期間全服務<span class="badge90">9 折</span></h1>
+      <p class="hero-sub">想整理品牌、建立網站，或優化 LINE 官方帳號嗎？現在加入合作案例計畫，完成專案後提供真實評語，即可享有全服務 9 折優惠。</p>
+      <span class="hero-note">⚡ 名額有限唷！錯過就沒囉～</span>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-outline">立即了解合作方式</a>
+        <a href="https://line.me/R/ti/p/@025sjouz" target="_blank" rel="noopener" class="btn btn-primary">我要參與合作案例計畫</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="deco-card deco-1 float-el">🎨 Logo 設計中</div>
+      <div class="deco-card deco-2 float-el">💬 收到真實評語！</div>
+      <div class="deco-card deco-3 float-el">🌐 網站上線</div>
+      <span class="star-deco star-1">✦</span>
+      <span class="star-deco star-2">✦</span>
+      <span class="star-deco star-3">✦</span>
+
+      <div class="phone-mock float-el" style="animation-delay:.4s;">
+        <div class="phone-screen">
+          <div class="phone-bar">
+            <div class="dotrow"><span></span><span></span><span></span></div>
+            <span class="lbl">簡實制所 LINE</span>
+          </div>
+          <div class="phone-body">
+            <div class="chat-bubble them">嗨～我們正在募集合作案例，完成專案享 9 折優惠唷！</div>
+            <div class="chat-bubble me">我要參與合作案例計畫</div>
+            <div class="chat-bubble them2">太好了！麻煩留下你的品牌名稱與想合作的服務 🌱</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 活動說明區 -->
+<section class="about section-pad" id="about">
+  <div class="container about-grid">
+    <div class="about-visual">
+      <div class="about-deco-shape about-shape-1"></div>
+      <div class="about-deco-shape about-shape-2"></div>
+      <div class="about-card-main">
+        <span class="num90">9 折</span>
+        <p>專案完成、提供合作評語後，全服務以原價的 9 折計算，一起留下值得展示的合作故事。</p>
+      </div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">活動說明</span>
+      <h2 class="section-title">這是一個<span class="hl">雙方都能一起成長</span>的合作計畫</h2>
+      <p>簡實制所正在累積更多不同產業的品牌作品案例，因此推出期間限定合作優惠。</p>
+      <p>只要你願意在專案完成後，<strong>提供一段合作評語</strong>，並同意作為網站或社群上的合作案例，即可享有服務總金額 <strong>9 折優惠</strong>。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 適合對象區 -->
+<section class="fit section-pad" id="fit">
+  <div class="container">
+    <div class="fit-head">
+      <span class="eyebrow">適合對象</span>
+      <h2 class="section-title">這個活動適合你嗎？</h2>
+      <p>如果你符合以下任何一項，這次的合作案例計畫就是為你準備的。</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card"><div class="fit-icon">🌱</div><p>正在創業或剛開始經營品牌</p></div>
+      <div class="fit-card"><div class="fit-icon">🎨</div><p>需要 Logo、網站或 LINE 官方帳號整理</p></div>
+      <div class="fit-card"><div class="fit-icon">🔍</div><p>想讓客戶更清楚了解你的服務</p></div>
+      <div class="fit-card"><div class="fit-icon">💬</div><p>願意提供合作心得與評語</p></div>
+      <div class="fit-card"><div class="fit-icon">💰</div><p>希望用較優惠的價格完成品牌基礎建設</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 優惠服務項目區 -->
+<section class="services section-pad" id="services">
+  <div class="container">
+    <div class="services-head">
+      <span class="eyebrow">優惠服務項目</span>
+      <h2 class="section-title">所有服務品項皆可享</h2>
+      <div class="off-tag">活動限定 <span class="big">9 折</span> 優惠</div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <span class="svc-off">9 折</span>
+        <div class="svc-icon">🪄</div>
+        <h3>品牌起步設計</h3>
+        <p>Logo 整理、品牌色、基礎識別、社群延伸設計，建立第一套完整的品牌視覺。</p>
+      </div>
+      <div class="svc-card">
+        <span class="svc-off">9 折</span>
+        <div class="svc-icon">💻</div>
+        <h3>品牌官網設計</h3>
+        <p>一頁式網站、品牌形象網站、服務介紹頁、RWD 響應式設計，全裝置都好讀好用。</p>
+      </div>
+      <div class="svc-card">
+        <span class="svc-off">9 折</span>
+        <div class="svc-icon">📱</div>
+        <h3>LINE 官方帳號建置</h3>
+        <p>圖文選單、自動回覆、服務導覽、預約或詢問流程整理，讓客戶詢問更順暢。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 合作流程區 -->
+<section class="process section-pad" id="process">
+  <div class="container">
+    <div class="process-head">
+      <span class="eyebrow">合作流程</span>
+      <h2 class="section-title">合作流程很簡單</h2>
+      <p>從提出需求到完成交付，五個步驟就能走完整個合作。</p>
+    </div>
+    <div class="process-track">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h3>提出需求</h3>
+        <p>填寫你的品牌狀態與想合作的服務項目。</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h3>確認合作內容</h3>
+        <p>一起討論適合你的服務範圍與時程。</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h3>開始設計製作</h3>
+        <p>依照需求進行品牌、網站或 LINE 官方帳號建置。</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h3>完成交付</h3>
+        <p>確認內容、完成上線或交付設計檔案。</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">05</div>
+        <h3>提供合作評語</h3>
+        <p>專案完成後，提供一段真實合作心得，即可享有 9 折優惠。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 合作評語使用說明區 -->
+<section class="review-use section-pad" id="review-use">
+  <div class="container">
+    <div class="review-box">
+      <div class="quote-mark">"</div>
+      <h2 class="section-title">評語會如何使用？</h2>
+      <p>合作評語將可能用於簡實制所網站、社群貼文、服務介紹頁或作品案例展示。</p>
+      <p>若不方便公開品牌名稱，也可以討論以匿名、產業類別或部分資訊呈現。</p>
+      <div class="review-tags">
+        <span>📄 網站案例頁</span>
+        <span>📣 社群貼文</span>
+        <span>🙈 可匿名呈現</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 注意事項區 -->
+<section class="notice section-pad" id="notice">
+  <div class="container notice-inner">
+    <h2 class="section-title">活動注意事項</h2>
+    <ul class="notice-list">
+      <li><span class="mark">!</span><span class="txt">優惠僅適用於活動期間（2026/12/31）內確認合作的專案。</span></li>
+      <li><span class="mark">!</span><span class="txt">需同意專案完成後提供合作評語。</span></li>
+      <li><span class="mark">!</span><span class="txt">案例公開範圍可於合作前討論確認。</span></li>
+      <li><span class="mark">!</span><span class="txt">9 折優惠不包含第三方平台費用、網域、主機、外掛、印刷或額外購買費用。</span></li>
+      <li><span class="mark">!</span><span class="txt">簡實制所保留是否承接專案與活動調整之權利。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8. CTA 結尾區 -->
+<section class="cta-end section-pad" id="cta-end">
+  <div class="container cta-end-inner">
+    <h2 class="section-title">正在整理品牌的你，<br>現在就是很好的開始</h2>
+    <p>不需要一次做到最完整，先把最需要被看見的內容整理清楚，</p>
+    <p>讓你的品牌有一個可以被理解、被詢問、被記住的開始。</p>
+    <div class="cta-steps">加入 LINE 後輸入 <b>「我要參與合作案例計畫」</b>，填寫對話資訊即可加入優惠名額</div>
+    <br>
+    <a href="https://line.me/R/ti/p/@025sjouz" target="_blank" rel="noopener" class="btn btn-primary">我要參與合作案例計畫</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    © 2026 簡實制所 Lessary Studio．All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Mobile submenu toggle
+document.querySelectorAll('.has-sub').forEach(item => {
+  const toggle = item.querySelector('.sub-toggle');
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (window.innerWidth <= 900) {
+      item.classList.toggle('open');
+    }
+  });
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
+
+// Scroll reveal animation
+const revealEls = document.querySelectorAll('.fit-card, .svc-card, .proc-step, .about-card-main, .review-box, .notice-list');
+revealEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity .6s ease, transform .6s ease';
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }, i % 6 * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
